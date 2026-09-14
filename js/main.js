@@ -75,6 +75,20 @@
   const shapes = $$("[data-float]");
   const wide = matchMedia("(min-width: 901px)");
 
+  // Side study guides: render at their full design width, then scale the whole page down to fit
+  const sideDocs = $$(".side-l, .side-r").map((side) => ({ side, doc: $(".doc", side) })).filter((x) => x.doc);
+  const fitSides = () => {
+    sideDocs.forEach(({ side, doc }) => {
+      const k = Math.min(1, side.clientWidth / 300) || 1;
+      doc.style.width = "300px";
+      doc.style.height = side.clientHeight / k + "px";
+      doc.style.transformOrigin = "0 0";
+      doc.style.transform = k < 1 ? `scale(${k})` : "";
+    });
+  };
+  fitSides();
+  window.addEventListener("resize", fitSides);
+
   let ticking = false;
   const update = () => {
     ticking = false;
