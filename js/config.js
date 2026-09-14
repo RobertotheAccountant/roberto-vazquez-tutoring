@@ -3,7 +3,7 @@
    ========================================================================== */
 window.SITE_CONFIG = {
   // Your live URL. Update after deploying (used by the QR code page + sharing).
-  siteUrl: "https://roberto-vazquez-tutoring.vercel.app",
+  siteUrl: "https://robertovazqueztutoring.com",
 
   // Where students can reach you directly.
   email: "rvazqu10@calpoly.edu",

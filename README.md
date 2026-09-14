@@ -2,7 +2,7 @@
 
 Marketing website for my one-on-one accounting and business tutoring service for Cal Poly SLO students.
 
-**Live:** https://roberto-vazquez-tutoring.vercel.app
+**Live:** https://robertovazqueztutoring.com
 
 ## Pages
 - **Home**: welcome screen that shrinks into a card as you scroll, how it works, example preview, about
@@ -45,4 +45,4 @@ Edit `js/config.js`:
 - `siteUrl`: the live URL (or custom domain)
 
 ## Deploy
-Push to GitHub, then import the repo at vercel.com. No build settings needed. To use a custom `.com`, add it under **Project → Settings → Domains** in Vercel.
+Hosted on Cloudflare Pages, connected to this GitHub repo. Every push to `main` deploys automatically. The custom domain is managed in Cloudflare.

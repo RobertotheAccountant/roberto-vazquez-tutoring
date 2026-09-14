@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /qr
+
+Sitemap: https://robertovazqueztutoring.com/sitemap.xml
