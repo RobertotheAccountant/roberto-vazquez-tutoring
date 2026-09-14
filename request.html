@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Request a Session · Roberto Vazquez Tutoring</title>
+  <meta name="description" content="Request a free 30-minute tutoring session for your accounting or business class at Cal Poly SLO.">
+  <meta name="theme-color" content="#F4F3F0">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/headshot-sm.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request a Session · Roberto Vazquez Tutoring">
+  <meta property="og:description" content="Request a free 30-minute tutoring session for your accounting or business class at Cal Poly SLO.">
+  <meta property="og:image" content="assets/headshot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>try{if(sessionStorage.getItem("rv-seen")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-loader")}catch(e){document.documentElement.classList.add("no-loader")}</script>
+  <script src="js/config.js"></script>
+</head><body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="loader" aria-hidden="true">
+    <svg viewBox="0 0 300 80"><path class="l1" pathLength="1" d="M8 70 H292"/><path class="l2" pathLength="1" d="M136 70 C135 52, 138 30, 134 10"/></svg>
+  </div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="none" stroke="#D7B98E" stroke-width="2.2"/><path d="M9 12.5h14M16 12.5v10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Roberto Vazquez <span class="serif">Tutoring</span></span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="examples.html">Examples</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a class="btn btn-sm" href="request.html" aria-current="page">Request a session</a></li>
+      </ul>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap page-head">
+      <div class="req-grid">
+        <div class="req-side">
+          <p class="eyebrow reveal">Request a session</p>
+          <h1 class="h1 reveal" style="--d:80ms">Let’s get you started</h1>
+          <p class="sub reveal" style="--d:160ms">Tell me about your class. I’ll email you to set up your free 30-minute session.</p>
+
+          <aside class="receipt reveal" style="--d:240ms" aria-label="Your estimate">
+            <div class="receipt-head"><span>Your estimate</span><span id="r-date"></span></div>
+            <dl>
+              <div><dt>Name</dt><dd id="r-name">—</dd></div>
+              <div><dt>Class</dt><dd id="r-course">—</dd></div>
+              <div><dt>Format</dt><dd id="r-format">Either works</dd></div>
+              <div class="sep"></div>
+              <div><dt>First session · 30 min</dt><dd>Free</dd></div>
+              <div><dt>Then <span id="r-hours">—</span> × $<span data-config-rate>15</span></dt><dd id="r-sub">—</dd></div>
+            </dl>
+            <div class="receipt-total"><span>Est. per week</span><b id="r-total">$0</b></div>
+            <p class="receipt-fine">Estimate only. You pay only for sessions you book.</p>
+          </aside>
+          <p class="contact-alt reveal">Prefer email? Write to <a class="link" data-config-email href="mailto:rvazqu10@calpoly.edu">rvazqu10@calpoly.edu</a></p>
+        </div>
+
+        <div class="form-card reveal" style="--d:120ms">
+          <ol class="progress-steps" aria-label="Form progress">
+            <li class="is-current">About you</li><li>Your class</li><li>Scheduling</li><li>Review</li>
+          </ol>
+
+          <form id="request-form" novalidate>
+            <fieldset class="fstep" data-step="0">
+              <legend>About you</legend>
+              <p class="fstep-sub">So I know who I’m emailing back.</p>
+              <div class="row2">
+                <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required><p class="err" id="e-name"></p></div>
+                <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="err" id="e-email"></p></div>
+              </div>
+              <div class="row2">
+                <div class="field"><label for="f-phone">Phone <span class="opt">optional</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="field"><label for="f-year">Year <span class="opt">optional</span></label>
+                  <select id="f-year" name="year"><option value="">Select</option><option>First year</option><option>Second year</option><option>Third year</option><option>Fourth year</option><option>Fifth year +</option><option>Grad student</option></select></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fstep" data-step="1" hidden>
+              <legend>Your class</legend>
+              <p class="fstep-sub">Any accounting or business course.</p>
+              <div class="row2">
+                <div class="field"><label for="f-course">Which class?</label><input id="f-course" name="course" type="text" placeholder="e.g. ACTG 211" required><p class="err" id="e-course"></p></div>
+                <div class="field"><label for="f-prof">Professor <span class="opt">optional</span></label><input id="f-prof" name="professor" type="text"></div>
+              </div>
+              <div class="field">
+                <p class="label" id="l-help">What do you need help with?</p>
+                <div class="chips" role="group" aria-labelledby="l-help">
+                  <label class="chip"><input type="checkbox" name="help_with" value="Homework"><span>Homework</span></label><label class="chip"><input type="checkbox" name="help_with" value="Exam prep"><span>Exam prep</span></label><label class="chip"><input type="checkbox" name="help_with" value="Understanding concepts"><span>Understanding concepts</span></label><label class="chip"><input type="checkbox" name="help_with" value="Projects"><span>Projects</span></label><label class="chip"><input type="checkbox" name="help_with" value="Study plan"><span>Study plan</span></label><label class="chip"><input type="checkbox" name="help_with" value="Something else"><span>Something else</span></label>
+                </div>
+              </div>
+              <div class="field" style="max-width:260px"><label for="f-exam">Next exam date <span class="opt">optional</span></label><input id="f-exam" name="next_exam" type="date"></div>
+            </fieldset>
+
+            <fieldset class="fstep" data-step="2" hidden>
+              <legend>Scheduling</legend>
+              <p class="fstep-sub">A rough idea is plenty. We’ll confirm by email.</p>
+              <div class="field">
+                <p class="label" id="l-format">How would you like to meet?</p>
+                <div class="chips" role="radiogroup" aria-labelledby="l-format">
+                  <label class="chip"><input type="radio" name="format" value="In person"><span>In person</span></label><label class="chip"><input type="radio" name="format" value="Zoom"><span>Zoom</span></label><label class="chip"><input type="radio" name="format" value="Either works" checked><span>Either works</span></label>
+                </div>
+              </div>
+              <div class="field">
+                <p class="label" id="l-hours">Hours per week after your free session</p>
+                <div class="chips" role="radiogroup" aria-labelledby="l-hours">
+                  <label class="chip"><input type="radio" name="hours_per_week" value="0" checked><span>Not sure yet</span></label><label class="chip"><input type="radio" name="hours_per_week" value="1"><span>1 hour</span></label><label class="chip"><input type="radio" name="hours_per_week" value="2"><span>2 hours</span></label><label class="chip"><input type="radio" name="hours_per_week" value="3"><span>3 hours</span></label><label class="chip"><input type="radio" name="hours_per_week" value="4"><span>4+ hours</span></label>
+                </div>
+              </div>
+              <div class="field"><label for="f-avail">When are you usually free?</label><input id="f-avail" name="availability" type="text" placeholder="e.g. Tue/Thu after 5pm"></div>
+              <div class="field"><label for="f-msg">Anything else? <span class="opt">optional</span></label><textarea id="f-msg" name="message" rows="3" placeholder="Topics you’re stuck on, deadlines, anything helpful"></textarea></div>
+            </fieldset>
+
+            <fieldset class="fstep" data-step="3" hidden>
+              <legend>Review &amp; send</legend>
+              <p class="fstep-sub">Make sure everything looks right.</p>
+              <dl class="review" id="review"></dl>
+            </fieldset>
+
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-nav">
+              <button class="btn btn-ghost" type="button" data-back hidden>Back</button>
+              <span class="spacer"></span>
+              <button class="btn" type="button" data-next>Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <button class="btn btn-mint" type="submit" data-submit hidden><span class="btn-label">Send request</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="none" stroke="#D7B98E" stroke-width="2.2"/><path d="M9 12.5h14M16 12.5v10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Roberto Vazquez <span class="serif">Tutoring</span></span></a>
+          <p>One-on-one tutoring for accounting and business courses at Cal Poly SLO.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="examples.html">Examples</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="request.html">Request a session</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a data-config-email href="mailto:rvazqu10@calpoly.edu">rvazqu10@calpoly.edu</a></li>
+              <li>San Luis Obispo, CA</li>
+              <li class="gh-link" hidden><a data-config-github href="#">Site code on GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© <span data-year>2026</span> Roberto Vazquez Tutoring · Designed &amp; built by Roberto Vazquez</span>
+        <span>Independent tutoring service. Not affiliated with Cal Poly.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/request.js"></script>
+</body>
+</html>

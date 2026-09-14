@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pricing · Roberto Vazquez Tutoring</title>
+  <meta name="description" content="Your first 30-minute tutoring session is free. After that, one-on-one sessions are $15/hour.">
+  <meta name="theme-color" content="#F4F3F0">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/headshot-sm.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pricing · Roberto Vazquez Tutoring">
+  <meta property="og:description" content="Your first 30-minute tutoring session is free. After that, one-on-one sessions are $15/hour.">
+  <meta property="og:image" content="assets/headshot.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>try{if(sessionStorage.getItem("rv-seen")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-loader")}catch(e){document.documentElement.classList.add("no-loader")}</script>
+  <script src="js/config.js"></script>
+</head><body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="loader" aria-hidden="true">
+    <svg viewBox="0 0 300 80"><path class="l1" pathLength="1" d="M8 70 H292"/><path class="l2" pathLength="1" d="M136 70 C135 52, 138 30, 134 10"/></svg>
+  </div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="none" stroke="#D7B98E" stroke-width="2.2"/><path d="M9 12.5h14M16 12.5v10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Roberto Vazquez <span class="serif">Tutoring</span></span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="examples.html">Examples</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a class="btn btn-sm" href="request.html">Request a session</a></li>
+      </ul>
+    </div>
+  </header>
+  <main id="main">
+    <header class="page-head wrap center">
+      <p class="eyebrow reveal">Pricing</p>
+      <h1 class="h1 reveal" style="--d:80ms">Simple, upfront pricing</h1>
+      <p class="sub reveal" style="--d:160ms">Start with a free session. Keep going only if it helps.</p>
+    </header>
+
+    <section class="wrap" aria-label="Plans">
+      <div class="plans">
+        <article class="plan plan-free reveal">
+          <span class="plan-label">Start here</span>
+          <div class="plan-price">$0</div>
+          <p class="plan-desc">Your first 30-minute session</p>
+          <ul class="checks">
+            <li>One-on-one, in person or on Zoom</li>
+            <li>Bring your actual homework or notes</li>
+            <li>No obligation to continue</li>
+          </ul>
+          <a class="btn" href="request.html">Request a free session <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+        <article class="plan reveal" style="--d:100ms">
+          <span class="plan-label">After your trial</span>
+          <div class="plan-price">$<span data-config-rate>15</span><small>/ hour</small></div>
+          <p class="plan-desc">One-on-one sessions, as needed</p>
+          <ul class="checks">
+            <li>Built around your class and exams</li>
+            <li>Book only when you need it</li>
+            <li>No packages or contracts</li>
+            <li class="pay-line" hidden>Pay with <span data-config-pay></span></li>
+          </ul>
+          <a class="btn btn-mint" href="request.html">Request a session <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+
+      <div class="calc reveal">
+        <div>
+          <h2 class="h3">Estimate your week</h2>
+          <p style="margin:6px 0 0;color:var(--muted)">How many hours a week would you like to meet?</p>
+          <div class="seg" role="radiogroup" aria-label="Hours per week">
+            <label><input type="radio" name="calc" value="1"><span>1 hr</span></label>
+            <label><input type="radio" name="calc" value="2" checked><span>2 hrs</span></label>
+            <label><input type="radio" name="calc" value="3"><span>3 hrs</span></label>
+            <label><input type="radio" name="calc" value="4"><span>4 hrs</span></label>
+          </div>
+        </div>
+        <div class="calc-out" aria-live="polite"><b id="calc-total">$30</b><span>per week, after your free session</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow reveal">Questions &amp; policies</p>
+          <h2 class="h2 reveal" style="--d:80ms">Good to know</h2>
+        </div>
+        <div class="faq"><details class="reveal"><summary>Is the first session really free?<i aria-hidden="true"></i></summary><div><p>Yes. Your first session is 30 minutes, one-on-one, and free. If it’s not a good fit, you don’t owe anything.</p></div></details><details class="reveal"><summary>Which classes can you help with?<i aria-hidden="true"></i></summary><div><p>Accounting and business courses. Type your exact class into the request form. If it’s outside what I can help with, I’ll tell you before we schedule anything.</p></div></details><details class="reveal"><summary>Where do sessions happen?<i aria-hidden="true"></i></summary><div><p>In person on campus or over Zoom, whichever you prefer.</p></div></details><details class="reveal"><summary>How do I pay?<i aria-hidden="true"></i></summary><div><p>Nothing is due for your trial. After that, sessions are $<span data-config-rate>15</span>/hour, paid after each session<span class="pay-inline" hidden> by <span data-config-pay></span></span>.</p></div></details><details class="reveal"><summary>What if I need to cancel?<i aria-hidden="true"></i></summary><div><p>Please give at least 24 hours’ notice so the time can go to another student.</p></div></details><details class="reveal"><summary>Will you do my homework or take a quiz for me?<i aria-hidden="true"></i></summary><div><p>No. I help you understand the material and practice it, but I don’t complete graded assignments, quizzes, or exams for anyone.</p></div></details></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="none" stroke="#D7B98E" stroke-width="2.2"/><path d="M9 12.5h14M16 12.5v10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Roberto Vazquez <span class="serif">Tutoring</span></span></a>
+          <p>One-on-one tutoring for accounting and business courses at Cal Poly SLO.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="examples.html">Examples</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="request.html">Request a session</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a data-config-email href="mailto:rvazqu10@calpoly.edu">rvazqu10@calpoly.edu</a></li>
+              <li>San Luis Obispo, CA</li>
+              <li class="gh-link" hidden><a data-config-github href="#">Site code on GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© <span data-year>2026</span> Roberto Vazquez Tutoring · Designed &amp; built by Roberto Vazquez</span>
+        <span>Independent tutoring service. Not affiliated with Cal Poly.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

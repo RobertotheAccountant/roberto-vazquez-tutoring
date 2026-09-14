@@ -4,31 +4,32 @@ Marketing website for my one-on-one accounting and business tutoring service for
 
 **Live:** https://roberto-vazquez-tutoring.vercel.app
 
-## What it does
-- Presents the service, credentials, pricing (free 30-minute trial, then $15/hr), and policies
-- **Session request form** with a live estimate ("quote") that updates as students fill it in. Submissions are emailed to me through [Web3Forms](https://web3forms.com)
-- Optional Calendly booking embed
-- `/qr` page that generates a printable QR code and mini flyer pointing at the live site
+## Pages
+- **Home**: welcome screen that shrinks into a card as you scroll, how it works, example preview, about
+- **Examples**: sample study guides and practice problems (journal entries, adjusting entries, income statement, FIFO/LIFO, bonds, study plan) that open in a reader
+- **Pricing**: free 30-minute trial, $15/hour after, a weekly cost estimator, and FAQ/policies
+- **Request**: a 4-step session request form with a live cost estimate. Submissions are emailed to me through [Web3Forms](https://web3forms.com)
+- `/qr`: printable QR code and mini flyer for the live site
 
 ## Built with
 Hand-written HTML, CSS, and vanilla JavaScript. No framework, no build step, no dependencies.
 
-- Scroll-driven animation in a single `requestAnimationFrame` loop: velocity-reactive marquee, word-by-word text reveal, parallax collage, pinned horizontal-scroll section, and section-based background theming
-- Page-load sequence with SVG stroke-drawing animation over the portrait
-- Custom cursor and magnetic buttons on pointer devices
-- Accessible: semantic landmarks, labeled form controls, inline validation, keyboard-friendly menu, visible focus, and full `prefers-reduced-motion` support
-- Responsive from 320px phones to wide desktops
-- SEO: meta description, Open Graph tags, JSON-LD structured data
+- Scroll-linked hero animation using `clip-path` and CSS custom properties, updated once per frame
+- Cross-page fade transitions with the View Transitions API
+- Multi-step form with per-step validation, a review screen, and an email fallback
+- Accessible: semantic landmarks, labeled controls, keyboard-friendly dialog and menu, visible focus, and `prefers-reduced-motion` support
+- Responsive from small phones to wide desktops
 
 ## Project structure
 ```
-index.html        single-page site
+index.html, examples.html, pricing.html, request.html, 404.html
 css/styles.css    design tokens and all styles
 js/config.js      editable settings (email, form key, Calendly link, rate)
-js/main.js        interactions, animation, form handling
-qr.html           QR code + printable flyer generator
+js/main.js        shared: nav, loader, reveals, scroll animation
+js/examples.js    example reader dialog
+js/request.js     multi-step request form
+qr.html           QR code + printable flyer
 assets/           headshot and favicon
-vercel.json       hosting config
 ```
 
 ## Run locally
