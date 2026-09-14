@@ -91,17 +91,18 @@
     if (scene && wide.matches) {
       const p = clamp(y / (vh * 0.95));
       const e = ease(p);
-      const w = Math.min(560, vw * 0.42);
-      const h = Math.min(vh * 0.8, 720);
+      const w = Math.min(660, vw * 0.48);
+      const h = Math.min(vh - 100, 800);
       const ix = ((vw - w) / 2) * e;
-      const it = ((vh - h) / 2 + 24) * e;
-      const ib = ((vh - h) / 2 - 24) * e;
+      const it = ((vh - h) / 2 + 30) * e;
+      const ib = ((vh - h) / 2 - 30) * e;
       stage.style.setProperty("--ix", ix + "px");
       stage.style.setProperty("--it", it + "px");
       stage.style.setProperty("--ib", Math.max(ib, 0) + "px");
       stage.style.setProperty("--r", 24 * e + "px");
       stage.style.setProperty("--p", p.toFixed(3));
-      stage.style.setProperty("--s", (1 - 0.16 * e).toFixed(4));
+      const fit = Math.min(0.8, (h - 48) / content.offsetHeight, (w - 48) / content.offsetWidth);
+      stage.style.setProperty("--s", (1 - (1 - fit) * e).toFixed(4));
       stage.style.setProperty("--o", ease(clamp((p - 0.3) / 0.6)).toFixed(3));
     } else if (scene) {
       ["--ix", "--it", "--ib", "--r", "--s", "--o", "--p"].forEach((k) => stage.style.removeProperty(k));
