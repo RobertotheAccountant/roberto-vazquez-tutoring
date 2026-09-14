@@ -91,7 +91,7 @@
     if (scene && wide.matches) {
       const p = clamp(y / (vh * 0.95));
       const e = ease(p);
-      const w = Math.min(660, vw * 0.48);
+      const w = Math.min(580, vw * 0.42);
       const h = Math.min(vh - 100, 800);
       const ix = ((vw - w) / 2) * e;
       const it = ((vh - h) / 2 + 30) * e;
