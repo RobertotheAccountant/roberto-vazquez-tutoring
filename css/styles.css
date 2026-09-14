@@ -89,6 +89,17 @@ button { font: inherit; color: inherit; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 html.no-loader .loader { display: none; }
 
+/* ---------- Custom cursor (mouse/trackpad only) ---------- */
+.cursor { display: none; }
+@media (pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cursor { display: block; position: fixed; left: 0; top: 0; z-index: 400; pointer-events: none; mix-blend-mode: difference; will-change: transform; }
+  .cursor span { display: block; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #fff; transition: transform .35s var(--ease), opacity .25s; }
+  .cursor.is-hover span { transform: scale(3.6); }
+  .cursor.is-down span { transform: scale(.7); }
+  .cursor.is-hover.is-down span { transform: scale(3); }
+  .cursor.is-hidden span { opacity: 0; transform: scale(0); }
+}
+
 /* ---------- Nav ---------- */
 .nav { position: fixed; inset: 0 0 auto; z-index: 100; transition: background-color .35s, box-shadow .35s; }
 .nav.is-scrolled { background: rgba(244,243,240,.86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
@@ -246,8 +257,8 @@ html.no-loader .loader { display: none; }
 
 /* ---------- Examples page ---------- */
 .ex-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 34px); }
-.ex-card { border: 0; padding: 0; background: none; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 16px; }
-.ex-thumb { position: relative; height: 360px; border-radius: 6px; overflow: hidden; transition: transform .5s var(--ease); }
+.ex-card { border: 0; padding: 0; background: none; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 16px; min-width: 0; width: 100%; font: inherit; color: inherit; }
+.ex-thumb { position: relative; height: 360px; border-radius: 6px; overflow: hidden; transition: transform .5s var(--ease); max-width: 100%; }
 .ex-thumb .doc { height: 100%; overflow: hidden; transition: box-shadow .5s var(--ease); }
 .ex-thumb::after { content: ""; position: absolute; inset: auto 0 0; height: 90px; background: linear-gradient(transparent, #fff); pointer-events: none; }
 .ex-open { position: absolute; left: 50%; bottom: 18px; z-index: 2; transform: translate(-50%, 10px); opacity: 0; transition: opacity .35s, transform .45s var(--ease); background: var(--charcoal); color: #fff; font-size: 14px; font-weight: 700; padding: 9px 16px; border-radius: 999px; white-space: nowrap; }
@@ -434,7 +445,15 @@ html.no-loader .loader { display: none; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  
+  .ex-grid, .plans, .row2, .creds { grid-template-columns: minmax(0, 1fr); }
+  .calc { grid-template-columns: minmax(0, 1fr); }
+  .calc-out { text-align: left; }
+  .avatar { width: 108px; height: 108px; }
+  .progress-steps li { font-size: 0; }
+  .fan .doc { width: 76%; height: 380px; }
+  .footer-links { flex-direction: column; gap: 24px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
   .loader { display: none; }

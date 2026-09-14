@@ -35,6 +35,29 @@
     }, 1250);
   }
 
+  /* ---------- Custom cursor (mouse/trackpad only) ---------- */
+  const cursor = $(".cursor");
+  if (cursor && matchMedia("(pointer: fine) and (hover: hover)").matches && !reduced) {
+    let mx = -100, my = -100, cx = -100, cy = -100, started = false;
+    const hoverSel = "a, button, summary, label, input, select, textarea, .ex-card, .step, .plan, [role=button]";
+    window.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      mx = e.clientX; my = e.clientY;
+      if (!started) { cx = mx; cy = my; started = true; }
+      cursor.classList.remove("is-hidden");
+    }, { passive: true });
+    document.addEventListener("pointerover", (e) => { cursor.classList.toggle("is-hover", !!e.target.closest(hoverSel)); });
+    document.addEventListener("pointerdown", () => cursor.classList.add("is-down"));
+    document.addEventListener("pointerup", () => cursor.classList.remove("is-down"));
+    document.documentElement.addEventListener("mouseleave", () => cursor.classList.add("is-hidden"));
+    const follow = () => {
+      cx = lerp(cx, mx, 0.22); cy = lerp(cy, my, 0.22);
+      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      requestAnimationFrame(follow);
+    };
+    follow();
+  }
+
   /* ---------- Nav ---------- */
   const nav = $(".nav");
   const menuBtn = $(".menu-btn");
