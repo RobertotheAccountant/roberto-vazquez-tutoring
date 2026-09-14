@@ -226,7 +226,7 @@ html.no-loader .loader { display: none; }
 .band .shape svg { stroke: rgba(255,255,255,.45); }
 
 /* ---------- Page header (inner pages) ---------- */
-.page-head { padding: clamp(130px, 16vw, 190px) 0 clamp(40px, 5vw, 60px); }
+.page-head { padding-top: clamp(130px, 16vw, 190px); padding-bottom: clamp(40px, 5vw, 60px); }
 .page-head .h1 { max-width: 16ch; }
 .page-head.center .h1 { margin: 0 auto; }
 
