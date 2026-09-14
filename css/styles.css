@@ -145,6 +145,14 @@ body.loaded .loader { clip-path: inset(0 0 100% 0); pointer-events: none; }
 }
 .nav > * { pointer-events: auto; }
 .nav.is-hidden { transform: translateY(-110%); }
+.nav::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  opacity: 0; transition: opacity .4s var(--ease), background-color .7s var(--ease);
+}
+.nav.is-scrolled::before { opacity: 1; }
+body.menu-open .nav::before { opacity: 0; }
 .brand { display: flex; flex-direction: column; line-height: .82; text-decoration: none; text-transform: uppercase; }
 .brand-serif { font-family: var(--f-serif); font-style: italic; text-transform: none; font-size: 21px; letter-spacing: -.02em; }
 .brand-sans { font-weight: 850; font-variation-settings: "wdth" 70; font-size: 23px; letter-spacing: .01em; }

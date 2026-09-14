@@ -251,6 +251,8 @@
     const max = document.documentElement.scrollHeight - vh;
     progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
 
+    nav.classList.toggle("is-scrolled", y > 40);
+
     // hide nav on scroll down
     if (!document.body.classList.contains("menu-open")) {
       nav.classList.toggle("is-hidden", delta > 2 && y > vh * 0.6);
