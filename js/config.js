@@ -24,5 +24,5 @@ window.SITE_CONFIG = {
   paymentMethods: "",
 
   // Link to this site's GitHub repo (shown in the footer). Leave empty to hide.
-  githubUrl: ""
+  githubUrl: "https://github.com/RobertotheAccountant/roberto-vazquez-tutoring"
 };
