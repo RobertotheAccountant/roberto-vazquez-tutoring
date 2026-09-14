@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>QR Code · Roberto Vazquez Tutoring</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz@1,6..72&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0E1A33; --paper:#EDF1EA; --hi:#E6F24A; --muted:#5A6577; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:"Archivo",system-ui,sans-serif; }
+    .tools { max-width: 760px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 44px; font-variation-settings:"wdth" 64; font-weight: 850; text-transform: uppercase; margin: 0 0 8px; }
+    p { color: var(--muted); }
+    label { display:block; font-weight:600; margin: 20px 0 8px; }
+    input { width:100%; font: inherit; padding: 12px 14px; border: 1.5px solid var(--ink); border-radius: 10px; background:#fff; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; margin: 16px 0 30px; }
+    button { font: inherit; font-weight: 650; padding: 12px 18px; border-radius: 999px; border: 0; background: var(--ink); color: var(--paper); cursor: pointer; }
+    button.alt { background: var(--hi); color: var(--ink); }
+    .flyer { background:#fff; width: 100%; max-width: 560px; margin: 0 auto; padding: 44px 40px; border-radius: 18px; text-align:center; box-shadow: 0 30px 60px -40px rgba(14,26,51,.5); }
+    .flyer .eyebrow { font-family:"IBM Plex Mono",monospace; font-size: 12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+    .flyer h2 { font-size: 64px; line-height:.86; margin: 14px 0; font-weight: 850; font-variation-settings:"wdth" 62; text-transform: uppercase; }
+    .flyer h2 em { font-family:"Newsreader",serif; font-weight:400; text-transform:none; }
+    .flyer .offer { display:inline-block; background: var(--hi); padding: 6px 14px; border-radius: 999px; font-weight: 700; margin-bottom: 24px; }
+    #qr { display:grid; place-items:center; margin: 0 auto 18px; }
+    #qr img, #qr canvas { width: 260px !important; height: 260px !important; }
+    .url { font-family:"IBM Plex Mono",monospace; font-size: 13px; color: var(--ink); word-break: break-all; }
+    @media print { .tools > :not(.flyer) { display:none; } body { background:#fff; } .flyer { box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <div class="tools">
+    <h1>QR code</h1>
+    <p>This page makes a QR code that opens your website. Save the image, or print the mini flyer below.</p>
+    <label for="url">Website address</label>
+    <input id="url" type="url">
+    <div class="row">
+      <button id="dl">Save QR as PNG</button>
+      <button class="alt" onclick="window.print()">Print flyer</button>
+    </div>
+
+    <div class="flyer">
+      <div class="eyebrow">Cal Poly SLO · Accounting &amp; business courses</div>
+      <h2>Roberto <em>Vazquez</em> Tutoring</h2>
+      <div class="offer">First 30-minute session free · then $15/hr</div>
+      <div id="qr"></div>
+      <div class="url" id="url-label"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+    const input = document.getElementById("url");
+    const box = document.getElementById("qr");
+    const label = document.getElementById("url-label");
+    const isLocal = /^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) || location.protocol === "file:";
+    input.value = isLocal ? (window.SITE_CONFIG && SITE_CONFIG.siteUrl) || "" : location.origin;
+    let qr;
+    const render = () => {
+      box.innerHTML = "";
+      label.textContent = input.value.replace(/^https?:\/\//, "");
+      qr = new QRCode(box, { text: input.value || " ", width: 1024, height: 1024, colorDark: "#0E1A33", colorLight: "#FFFFFF", correctLevel: QRCode.CorrectLevel.H });
+    };
+    input.addEventListener("input", render);
+    render();
+    document.getElementById("dl").addEventListener("click", () => {
+      const canvas = box.querySelector("canvas");
+      const a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.download = "roberto-vazquez-tutoring-qr.png";
+      a.click();
+    });
+  </script>
+</body>
+</html>
