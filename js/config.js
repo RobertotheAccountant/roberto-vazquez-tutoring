@@ -11,7 +11,7 @@ window.SITE_CONFIG = {
   // Get a free key at https://web3forms.com (enter the email above).
   // Every request form submission is then emailed to you.
   // Until this is set, the form opens the student's email app instead.
-  web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+  web3formsKey: "a6cd05e7-06d0-41df-93ba-57ef3621c8e6",
 
   // Your Calendly scheduling link, e.g. "https://calendly.com/yourname/30min".
   // Leave empty to show a "send a request instead" card.
